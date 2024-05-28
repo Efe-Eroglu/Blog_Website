@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="BlogProjem.admin.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="admin.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+           <div class="kutu">
+               <div class="slider"></div>
+               <div class="menu"></div>
+               <div class="govde">
+                   <div class="govdesol">
+                       <div class="govdesolbaslik"> &nbsp MENÜLER</div>
+                        <div class="govdesolicerik">
+                            <div style="height:25px; margin-top:20px"><a href="kategoriler.aspx">- Kategoriler</a></div>
+                            <div style="height:25px; margin-top:20px"><a href="makaleler.aspx">- Makaleler</a></div>
+                            <div style="height:25px; margin-top:20px"><a href="yorum.aspx">- Yorum</a></div>
+                            <div style="height:25px; margin-top:20px"><a href="mesaj.aspx">- Mesaj</a></div>
+                        </div>
+                   </div>  
+                   <div class="govdesag">
+                       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                   </div>
+           </div>
+
+        <div class="alt"></div>
+
+           </div>
+    
+    </form>
+</body>
+</html>

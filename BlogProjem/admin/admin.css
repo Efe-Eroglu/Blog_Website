@@ -1,0 +1,70 @@
+﻿body {
+    background-color:#e1e1e1;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+.kutu {
+    width: 1000px;
+    height: 1000px;
+    margin:0 auto;
+}
+
+
+.kutu .slider{
+    width:1000px;
+    height:300px;
+    float:left;
+    background-color:#2a595c
+}
+
+.kutu .menu{
+    width:1000px;
+    height:40px;
+    float:left;
+    background-color:#2a595c;
+    margin-top:5px;
+}
+
+.kutu .govde{
+    width:1000px;
+    height:600px;
+    float:left;
+    margin-top:20px;
+}
+
+.kutu .govde .govdesol{
+    width:270px;
+    height:auto;
+    float:left;
+}
+
+.kutu .govde .govdesol .govdesolbaslik {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background-color: #2a595c;
+    border: 1px dotted #2a595c;
+    color:#fff;
+    line-height:30px;
+}
+
+.kutu .govde .govdesol .govdesolicerik{
+    width:100%;
+    float:left;
+    height:200px;
+    border:1px dotted #2a595c;
+}
+
+.kutu .alt{
+    width:100%;
+    height:40px;
+    float:left;
+    background-color:#2a595c;
+    margin-top:20px
+}

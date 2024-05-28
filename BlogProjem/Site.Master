@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BlogProjem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - ASP.NET Uygulamam</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+        <!-- İkinci kod parçacığından başlık kısmını yapıştırın -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+        <link href="Content/style.css" rel="stylesheet" />
+        <link href="Content/responsive.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="hero_area">
+
+          <header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+      <a class="navbar-brand mr-5" href="/">
+        <img src="images/logo.png" alt="">
+        <span>Dev Blog</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Ana Sayfa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">İletişim</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="/admin">Giriş Yap</a>
+            </li>
+
+          </ul>
+          <form class="form-inline">
+            <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <asp:ContentPlaceHolder ID="MainContent" runat="server">
+      
+      
+  </asp:ContentPlaceHolder>
+      
+      
+  <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+      <section class="container-fluid footer_section">
+          <p>
+              Copyright &copy; 2024 All Rights Reserved By Efe EROĞLU
+          </p>
+      </section>
+
+      <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+  </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
