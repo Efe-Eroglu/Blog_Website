@@ -8,6 +8,10 @@ body {
   padding: 30px 0;
 }
 
+i{
+    color:white;
+}
+
 .layout_padding2 {
   padding: 45px 0;
 }

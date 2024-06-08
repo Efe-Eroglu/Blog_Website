@@ -48,11 +48,12 @@ namespace BlogProjem.admin
             {
                 fu_slider.SaveAs(Server.MapPath("/sresim/" + fu_slider.FileName));
 
-                SqlCommand cmdmguncelle = new SqlCommand("update Blog set blogBaslik=@baslik, blogOzet=@ozet, blogIcerik=@icerik, blogResim=@resim, blogYorumSayisi=@yorumsayi",baglan.baglan());
+                SqlCommand cmdmguncelle = new SqlCommand("update Blog set blogBaslik=@baslik, blogOzet=@ozet, blogIcerik=@icerik, blogResim=@resim, blogYorumSayisi=@yorumsayi where blogID=@id",baglan.baglan());
                 cmdmguncelle.Parameters.AddWithValue("@baslik", txt_baslik.Text);
                 cmdmguncelle.Parameters.AddWithValue("@ozet", txt_ozet.Text); 
                 cmdmguncelle.Parameters.AddWithValue("@icerik", txt_icerik.Text); 
                 cmdmguncelle.Parameters.AddWithValue("@resim", "/sresim/" + fu_slider.FileName); 
+                cmdmguncelle.Parameters.AddWithValue("@id", blogID);
                 cmdmguncelle.Parameters.AddWithValue("@yorumsayi", int.Parse(txt_yorumsayi.Text)); 
 
                 cmdmguncelle.ExecuteNonQuery();

@@ -7,6 +7,8 @@
     <title>Admin Yönetim Paneli</title>
     <link href="admin.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,11 +22,10 @@
                 <nav id="mainMenu">
                     <ul>
                         <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i> Ana Sayfa</a></li>
-                        <li><a href="kategoriler.aspx"><i class="fa fa-dashboard"></i> Kategoriler</a></li>
-                        <li><a href="makaleler.aspx"><i class="fa fa-user-md"></i> Bloglar</a></li>
-                        <li><a href="duyurular.aspx"><i class="fa fa-user-md"></i> Duyurular</a></li>
-                        <li><a href="yorumlar.aspx"><i class="fa fa-user-nurse"></i> Yorumlar</a></li>
-                        <li><a href="kullanicilar.aspx"><i class="fa fa-procedures"></i> Kullanıcılar</a></li>
+                        <li><a href="kategoriler.aspx"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Kategoriler</a></li>
+                        <li><a href="makaleler.aspx"><i class="fa-regular fa-file-lines"></i> Bloglar</a></li>
+                        <li><a href="duyurular.aspx"><i class="fa-solid fa-bullhorn"></i> Duyurular</a></li>
+                        <li><a href="yorumlar.aspx"><i class="fa-regular fa-comment"></i> Yorumlar</a></li>
                         <li><a href="default.aspx?log=null"><i class="fa fa-sign-out"></i> Çıkış</a></li>
                     </ul>
                 </nav>

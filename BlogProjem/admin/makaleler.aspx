@@ -45,114 +45,134 @@
             margin-bottom: 20px;
             padding: 10px 20px;
             border-radius: 10px;
+            display: flex;
+            align-items: center;
         }
 
-        .auto-style1 {
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select,
+            .form-group button {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .form-group button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+                .form-group button:hover {
+                    background-color: #45a049;
+                }
+
+            .form-group textarea {
+                resize: vertical;
+            }
+
+        table {
             width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
-        .auto-style2 {
-            width: 406px;
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
         }
 
-        .auto-style3 {
-            width: 406px;
-            height: 27px;
+        th {
+            background-color: #f2f2f2;
         }
 
-        .auto-style4 {
-            height: 27px;
+        a {
+            color: #4CAF50;
+            text-decoration: none;
         }
 
-        .auto-style5 {
-            width: 414px;
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .eklebuton {
+            background-color: cadetblue;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            transition: ease 1s;
         }
 
-        .auto-style6 {
-            width: 481px;
+            .eklebuton:hover {
+                cursor: pointer;
+                background-color: darkcyan;
+            }
+
+        #ikon {
+            color: darkslategray;
         }
 
-        .auto-style7 {
-            width: 611px;
+            #ikon:hover {
+                color: darkcyan;
+            }
+
+        .data-table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #2a595a;
+            color: white;
         }
-    .auto-style8 {
-        width: 264px;
-    }
-    .auto-style9 {
-        margin-left: 80px;
-    }
-    .auto-style10 {
-        width: 264px;
-        height: 31px;
-    }
-    .auto-style11 {
-        height: 31px;
-        margin-left: 80px;
-    }
     </style>
-
 </asp:Content>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="section-header">
         <asp:Button ID="btn_blogArti" runat="server" CssClass="action-button" OnClick="btn_blogArtiClick" Text="+" />
         <asp:Button ID="btn_blogEksi" runat="server" CssClass="action-button" OnClick="btn_blogEksiClick" Text="-" />
         Blog Ekleme Paneli
     </div>
+
     <asp:Panel ID="pnl_blog" runat="server" CssClass="panel-style">
-
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Kategori :</td>
-                <td class="auto-style4">
-                    <asp:DropDownList ID="ddl_kategori" runat="server" Width="244px">
-                    </asp:DropDownList>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Başlık :</td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txt_baslik" runat="server" Width="407px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Özet : </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txt_ozet" runat="server" Height="200px" Width="406px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">Resim :</td>
-                <td class="auto-style4">
-                    <asp:FileUpload ID="fu_slider" runat="server" Width="412px" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">İçerik :</td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txt_icerik" runat="server" Height="305px" Width="406px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">
-                    <asp:Button ID="btn_makaleEkle" runat="server" Height="83px" Text="Ekle" Width="231px" OnClick="btn_makaleEkle_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="ddl_kategori">Kategori:</label>
+            <asp:DropDownList ID="ddl_kategori" runat="server"></asp:DropDownList>
+        </div>
+        <div class="form-group">
+            <label for="txt_baslik">Başlık:</label>
+            <asp:TextBox ID="txt_baslik" runat="server"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="txt_ozet">Özet:</label>
+            <asp:TextBox ID="txt_ozet" runat="server" TextMode="MultiLine" Height="100px"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="fu_slider">Resim:</label>
+            <asp:FileUpload ID="fu_slider" runat="server" />
+        </div>
+        <div class="form-group">
+            <label for="txt_icerik">İçerik:</label>
+            <asp:TextBox ID="txt_icerik" runat="server" TextMode="MultiLine" Height="200px"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <asp:Button ID="btn_makaleEkle" CssClass="eklebuton" runat="server" Text="Ekle" OnClick="btn_makaleEkle_Click" />
+        </div>
     </asp:Panel>
-
-
 
     <div class="section-header">
         <asp:Button ID="btn_blogDArti" runat="server" CssClass="action-button" OnClick="btn_blogDArtiClick" Text="+" />
@@ -160,32 +180,23 @@
         Blog Düzenleme Paneli
     </div>
     <asp:Panel ID="pnl_blogDuzenle" runat="server" CssClass="panel-style">
-        <asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
-            <HeaderTemplate>
-                <table class="auto-style1">
+        <table>
+            <tr>
+                <th style="width: 550px;">Blog Adı</th>
+                <th style="width: 297px;">Düzenle</th>
+                <th>Sil</th>
+            </tr>
+            <asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+                <ItemTemplate>
                     <tr>
-                        <td class="auto-style5">Blog Adı </td>
-                        <td class="auto-style6"><a></a>Düzenle</td>
-                        <td>Sil</td>
+                <td><asp:Literal ID="Literal1" runat="server" Text='<%# Eval("blogBaslik") %>'></asp:Literal></td>
+                        <td><a href="makaleGuncelle.aspx?blogID=<%#Eval("blogID")%>"><i class="fas fa-edit icon-button" id="ikon"></i></a></td>
+                        <td><a href="makaleler.aspx?blogID=<%#Eval("blogID")%>&islem=sil"><i class="fas fa-trash-alt icon-button" id="ikon"></i></a></td>
                     </tr>
-                </table>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <table class="auto-style1">
-                    <tr>
-                        <td class="auto-style5">
-                            <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("blogBaslik") %>'></asp:Literal>
-                        </td>
-                        <td class="auto-style7"><a href="makaleGuncelle.aspx?blogID=<%#Eval("blogID")%>">Düzenle</a></td>
-                        <td><a href="makaleler.aspx?blogID=<%#Eval("blogID")%>&islem=sil">Sil</a></td>
-                    </tr>
-                </table>
-            </ItemTemplate>
-        </asp:DataList>
+                </ItemTemplate>
+            </asp:DataList>
+        </table>
     </asp:Panel>
-
-
-
 
     <div class="section-header">
         <asp:Button ID="Button1" runat="server" CssClass="action-button" OnClick="btn_BlogDosyaEkleArti" Text="+" />
@@ -193,33 +204,15 @@
         Blog Dosya Ekleme Paneli
     </div>
     <asp:Panel ID="pnl_dosyaEkle" runat="server" CssClass="panel-style">
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style8">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style8">Dosya Seç :</td>
-                <td class="auto-style9">
-                    <asp:FileUpload ID="fu_dosya" runat="server" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style8">&nbsp;</td>
-                <td class="auto-style9">
-                    <asp:Button ID="btn_ekle" runat="server" Height="41px" OnClick="btn_ekle_Click" Text="Ekle" Width="134px" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style10"></td>
-                <td class="auto-style11"></td>
-            </tr>
-            <tr>
-                <td class="auto-style8">Not:</td>
-                <td class="auto-style9">Ekleme işlemi /dosyalar/eklenendosya.uzantı şeklinde kullanılacak</td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="fu_dosya">Dosya Seç:</label>
+            <asp:FileUpload ID="fu_dosya" runat="server" />
+        </div>
+        <div class="form-group">
+            <asp:Button ID="btn_ekle" runat="server" Text="Ekle" CssClass="eklebuton" OnClick="btn_ekle_Click" />
+        </div>
+        <div class="form-group">
+            <p><strong>Not:</strong> Ekleme işlemi /dosyalar/eklenendosya.uzantı şeklinde kullanılacak</p>
+        </div>
     </asp:Panel>
-
-
 </asp:Content>

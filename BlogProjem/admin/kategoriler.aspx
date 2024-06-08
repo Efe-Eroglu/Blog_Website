@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="kategoriler.aspx.cs" Inherits="BlogProjem.admin.kategoriler" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style type="text/css">
 
     .action-button {
@@ -90,6 +91,18 @@
         background-color: #2a595a;
         color: white; 
     }
+
+    #ikon{
+        color:darkslategray;
+    }
+
+    #ikon:hover{
+        color:darkcyan;
+    }
+
+    strong{
+        font-size:20px;
+    }
 </style>
 
 </asp:Content>
@@ -143,9 +156,9 @@
                 <HeaderTemplate>
                     <table class="data-table">
                         <tr>
-                            <td>Kategori Ad</td>
-                            <td>Düzenleme</td>
-                            <td>Sil</td>
+                            <td><strong>Kategori Ad</strong></td>
+                            <td><strong>Düzenle</strong></td>
+                            <td><strong>Sil</strong></td>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -154,14 +167,14 @@
                             <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
                         </td>
                         <td>
-                            <a href="kategoriguncelle.aspx?kategoriID=<%# Eval("kategoriID") %>">Düzenleme</a>
+                            <a href="kategoriguncelle.aspx?kategoriID=<%# Eval("kategoriID") %>"><i class="fas fa-edit icon-button" id="ikon"></i></a>
                         </td>
                         <td>
-                            <a href="kategoriler.aspx?kategoriID=<%# Eval("kategoriID") %>&islem=sil">Sil</a>
+                            <a href="kategoriler.aspx?kategoriID=<%# Eval("kategoriID") %>&islem=sil"><i class="fas fa-trash-alt icon-button" id="ikon"></i></a>
                         </td>
                     </tr>
                 </ItemTemplate>
             </asp:DataList>
-        </asp:Panel> <!-- Kategori Düzenleme Paneli'nin kapanma etiketi -->
+        </asp:Panel>
     </div>
 </asp:Content>
