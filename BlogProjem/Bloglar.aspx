@@ -205,7 +205,10 @@
                         <asp:DataList ID="dl_slider" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+                                    <a href="makaledetay.aspx?blogID=<%#Eval("blogID") %>">
+                                        <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+
+                                    </a>
                                 </li>
                             </ItemTemplate>
                         </asp:DataList>

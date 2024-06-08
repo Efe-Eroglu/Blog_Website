@@ -25,7 +25,7 @@
                         <li><a href="duyurular.aspx"><i class="fa fa-user-md"></i> Duyurular</a></li>
                         <li><a href="yorumlar.aspx"><i class="fa fa-user-nurse"></i> Yorumlar</a></li>
                         <li><a href="kullanicilar.aspx"><i class="fa fa-procedures"></i> Kullanıcılar</a></li>
-                        <li><a href="Logout.aspx"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        <li><a href="default.aspx?log=null"><i class="fa fa-sign-out"></i> Çıkış</a></li>
                     </ul>
                 </nav>
             </div>

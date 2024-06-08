@@ -10,6 +10,12 @@ namespace BlogProjem.admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["yoneticiKullanici"] != null)
+            {
+                Response.Redirect("adminpanel.aspx");
+            }
+
             if (!IsPostBack)
             {
                 panelStep2.Style["display"] = "none";
@@ -32,7 +38,6 @@ namespace BlogProjem.admin
             string sifre = txt_sifre.Text;
             string email = txt_email.Text;
 
-            // Boş alan kontrolü
             if (string.IsNullOrWhiteSpace(isim) || string.IsNullOrWhiteSpace(soyisim) || string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre) || string.IsNullOrWhiteSpace(email))
             {
                 Response.Write("<script>alert('Lütfen tüm alanları doldurun.');</script>");
@@ -43,7 +48,6 @@ namespace BlogProjem.admin
             {
                 using (SqlConnection conn = baglan.baglan())
                 {
-                    // Kullanıcı adı ve e-posta kontrolü
                     string checkUserQuery = "SELECT COUNT(*) FROM Admin WHERE yoneticiKullaniciAd = @KullaniciAdi OR yoneticiEmail = @Email";
                     SqlCommand checkUserCmd = new SqlCommand(checkUserQuery, conn);
                     checkUserCmd.Parameters.AddWithValue("@KullaniciAdi", kullaniciAdi);
@@ -52,12 +56,10 @@ namespace BlogProjem.admin
 
                     if (userCount > 0)
                     {
-                        // Kullanıcı adı veya e-posta zaten mevcut
                         Response.Write("<script>alert('Bu kullanıcı adı veya e-posta zaten kayıtlı. Lütfen farklı bir kullanıcı adı ve e-posta seçin.');</script>");
                         return;
                     }
 
-                    // Kullanıcı adı ve e-posta mevcut değil, kayıt işlemini gerçekleştirin
                     string query = "INSERT INTO Admin (yoneticiAdSoyad, yoneticiKullaniciAd, yoneticiSifre, yoneticiEmail) VALUES (@Isim, @KullaniciAdi, @Sifre, @Email)";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Isim", isim + " " + soyisim);
@@ -69,6 +71,7 @@ namespace BlogProjem.admin
 
                     if (result > 0)
                     {
+                        Session["yoneticiKullanici"] = "admin";
                         Response.Write("<script>alert('Kayıt Başarılı.'); window.location='adminpanel.aspx';</script>");
                     }
                     else

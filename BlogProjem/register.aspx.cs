@@ -10,6 +10,10 @@ namespace BlogProjem
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["kullanici"] != null)
+            {
+                Response.Redirect("Default.aspx");
+            }
             if (!IsPostBack)
             {
                 panelStep2.Style["display"] = "none";
@@ -69,6 +73,7 @@ namespace BlogProjem
 
                     if (result > 0)
                     {
+                        Session["kullanici"] = "kullanici";
                         Response.Write("<script>alert('Kayıt Başarılı.'); window.location='Default.aspx';</script>");
                     }
                     else

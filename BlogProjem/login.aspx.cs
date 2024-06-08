@@ -14,7 +14,10 @@ namespace BlogProjem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["kullanici"] != null)
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
 
         protected void btn_giris_Click(object sender, EventArgs e)
@@ -24,7 +27,7 @@ namespace BlogProjem
 
             if (dr.Read())
             {
-                Session["kullanici"] = dr["kullanici"];
+                Session["kullanici"] = dr["kullaniciTakmaAd"];
 
                 Response.Write("<script>alert('Giriş Başarılı!');</script>");
                 Response.Redirect("Default.aspx");
