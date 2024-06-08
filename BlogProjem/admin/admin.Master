@@ -1,40 +1,41 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="BlogProjem.admin.admin" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin Yönetim Paneli</title>
     <link href="admin.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-
 <body>
     <form id="form1" runat="server">
-           <div class="kutu">
-               <div class="slider"></div>
-               <div class="menu"></div>
-               <div class="govde">
-                   <div class="govdesol">
-                       <div class="govdesolbaslik"> &nbsp MENÜLER</div>
-                        <div class="govdesolicerik">
-                            <div style="height:25px; margin-top:20px"><a href="kategoriler.aspx">- Kategoriler</a></div>
-                            <div style="height:25px; margin-top:20px"><a href="makaleler.aspx">- Makaleler</a></div>
-                            <div style="height:25px; margin-top:20px"><a href="yorum.aspx">- Yorum</a></div>
-                            <div style="height:25px; margin-top:20px"><a href="mesaj.aspx">- Mesaj</a></div>
-                        </div>
-                   </div>  
-                   <div class="govdesag">
-                       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-                   </div>
-           </div>
-
-        <div class="alt"></div>
-
-           </div>
-    
+        <div id="wrapper">
+            <div id="sidebar">
+                <div id="profile">
+                    <span id="name">Efe Eroğlu</span>
+                    <span class="status online">Online</span>
+                </div>
+                <input type="text" placeholder="Search..." />
+                <nav id="mainMenu">
+                    <ul>
+                        <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i> Ana Sayfa</a></li>
+                        <li><a href="kategoriler.aspx"><i class="fa fa-dashboard"></i> Kategoriler</a></li>
+                        <li><a href="makaleler.aspx"><i class="fa fa-user-md"></i> Bloglar</a></li>
+                        <li><a href="duyurular.aspx"><i class="fa fa-user-md"></i> Duyurular</a></li>
+                        <li><a href="yorumlar.aspx"><i class="fa fa-user-nurse"></i> Yorumlar</a></li>
+                        <li><a href="kullanicilar.aspx"><i class="fa fa-procedures"></i> Kullanıcılar</a></li>
+                        <li><a href="Logout.aspx"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="content">
+                <header>
+                    <h1>Yönetim Paneli</h1>
+                </header>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
     </form>
 </body>
 </html>

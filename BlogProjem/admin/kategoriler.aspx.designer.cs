@@ -96,6 +96,15 @@ namespace BlogProjem.admin
         protected global::System.Web.UI.WebControls.Button btn_kdEksi;
 
         /// <summary>
+        /// pnl denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnl;
+
+        /// <summary>
         /// DataList1 denetimi.
         /// </summary>
         /// <remarks>
@@ -103,14 +112,5 @@ namespace BlogProjem.admin
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList DataList1;
-
-        /// <summary>
-        /// pnl_kategoriDuzenle denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_kategoriDuzenle;
     }
 }

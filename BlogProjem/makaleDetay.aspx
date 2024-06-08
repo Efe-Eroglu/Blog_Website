@@ -177,8 +177,8 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
-            margin:10px;
-            width:1060px;
+            margin: 10px;
+            width: 1060px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
@@ -236,7 +236,8 @@
             .yorum-yap button:hover {
                 background-color: #0056b3;
             }
-    </style>
+
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -366,15 +367,33 @@
                 </asp:DataList>
 
                 <div class="yorum-panel">
-                    <h2>Yorumlar</h2>
+                    <h2>Yorumlar </h2>
                     <hr />
+                    
                     <div class="yorumlar">
-                        <!-- Yorumları buraya ekle -->
+                        <asp:DataList ID="DataList2" runat="server">
+                            <ItemTemplate>
+                                <div>
+                                    <asp:Image ID="Image4" runat="server" Height="51px" ImageUrl='<%# Eval("yorumResim") %>' Width="77px" />
+                                </div>
+                                <div>
+
+                                    <asp:Label ID="Label6" runat="server" Text='<%# Eval("yorumAdSoyad") %>'></asp:Label>
+                                    <asp:Label ID="Label7" runat="server" Text='<%# Eval("yorumTarih","{0:dd MMMM yyyy}") %>'></asp:Label>
+
+                                </div>
+                                <div>
+                                    <asp:Label ID="Label8" runat="server" Text='<%# Eval("yorumIcerik") %>'></asp:Label>
+                                </div>
+                            </ItemTemplate>
+                        </asp:DataList>
                     </div>
+                    
+                    
                     <hr />
 
                     <h3>Yorum Yap</h3>
-                    
+
                     <div class="yorum-yap">
                         Ad Soyad
                         <asp:TextBox ID="txt_ad" runat="server" placeholder="Ad Soyad"></asp:TextBox>

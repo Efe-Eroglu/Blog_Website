@@ -43,7 +43,7 @@ namespace BlogProjem
             dl_kategori.DataBind();
 
 
-            string sqlString = "SELECT dbo.Blog.blogResim, dbo.Blog.blogYorumSayisi, dbo.Blog.blogOkunma, dbo.Blog.blogTarih, dbo.Blog.blogBaslik, dbo.Blog.blogOzet, dbo.Kategori.kategoriResim, dbo.Kategori.kategoriID, dbo.Kategori.kategoriAd FROM dbo.Blog INNER JOIN dbo.Kategori ON dbo.Blog.kategoriID = dbo.Kategori.kategoriID WHERE dbo.Kategori.kategoriID='" + kategoriID + "'";
+            string sqlString = "SELECT dbo.Blog.blogResim, dbo.Blog.blogYorumSayisi, dbo.Blog.blogID, dbo.Blog.blogOkunma, dbo.Blog.blogTarih, dbo.Blog.blogBaslik, dbo.Blog.blogOzet, dbo.Kategori.kategoriResim, dbo.Kategori.kategoriID, dbo.Kategori.kategoriAd FROM dbo.Blog INNER JOIN dbo.Kategori ON dbo.Blog.kategoriID = dbo.Kategori.kategoriID WHERE dbo.Kategori.kategoriID='" + kategoriID + "'";
             SqlCommand cmdblog = new SqlCommand(sqlString, baglan.baglan());
             SqlDataReader drbloggetir = cmdblog.ExecuteReader();
             DataList1.DataSource = drbloggetir;

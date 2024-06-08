@@ -19,6 +19,12 @@ namespace BlogProjem.admin
             duyurularID = Request.QueryString["duyurularId"];
             islem = Request.QueryString["islem"];
 
+
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             if (islem == "sil")
             {
                 SqlCommand cmddsil = new SqlCommand("delete from Duyurular where duyurularID=@id", baglan.baglan());

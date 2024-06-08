@@ -15,8 +15,12 @@ namespace BlogProjem.admin
         string kategoriID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             kategoriID = Request.QueryString["kategoriID"];
-            Console.WriteLine(kategoriID);
             if (Page.IsPostBack == false) 
             {
                 SqlCommand cmdkguncelle = new SqlCommand("select * from Kategori where kategoriID='" + kategoriID + "'", baglan.baglan());

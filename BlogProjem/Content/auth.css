@@ -6,8 +6,8 @@
     text-align: center;
     width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left:300px;
-    margin-top:100px;
+    margin-left: 15%;
+    margin-bottom: 220px;
 }
 
     .register-container div {
@@ -42,6 +42,8 @@
     transition: background-color 0.3s ease;
     font-family: 'Poppins', sans-serif;
     float: left;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
     .register-button:hover {
@@ -52,7 +54,8 @@
 
 h1 {
     color: #ed8207;
-    text-align: center;
     margin-bottom: 40px;
     font-size: 48px;
+    margin-left: 15%;
+    margin-top: 5%;
 }

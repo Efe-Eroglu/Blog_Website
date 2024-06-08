@@ -25,13 +25,16 @@ namespace BlogProjem.admin
 
             if (dr.Read()) 
             {
+                Session["yoneticiKullanici"] = dr["yoneticiKullanici"];
+
+                Response.Write("<script>alert('Giriş Başarılı!');</script>");
                 Response.Redirect("adminpanel.aspx");
             }
             else 
             {
-                Console.WriteLine("Hatalı giriş");
+                Response.Write("<script>alert('Hatalı Giriş!');</script>");
             }
-        
+
         }
     }
 }

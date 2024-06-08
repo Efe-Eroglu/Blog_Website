@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - ASP.NET Uygulamam</title>
+    <title>Developer Blog</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -19,7 +19,6 @@
 
     
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-        <!-- İkinci kod parçacığından başlık kısmını yapıştırın -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
@@ -34,8 +33,6 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
@@ -47,7 +44,8 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
+
+
             </Scripts>
         </asp:ScriptManager>
 
@@ -67,18 +65,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Ana Sayfa <span class="sr-only">(current)</span></a>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="bloglar.aspx">Blog</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="Default.aspx#About">Hakkımızda</a>
+            </li>
+          
+              <li class="nav-item">
+              <a class="nav-link" href="Default.aspx#Contact">İletişim</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#About">Hakkımızda</a>
+               <a class="nav-link" href="login.aspx">Giriş Yap</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Contact">İletişim</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/admin">Giriş Yap</a>
-            </li>
+                 <li class="nav-item">
+      <a class="nav-link" href="register.aspx">Kayıt Ol</a>
+   </li>
 
           </ul>
           <form class="form-inline">
@@ -106,7 +110,13 @@
 
       <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
       <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+ 
   </asp:ContentPlaceHolder>
+
+  <asp:ContentPlaceHolder ID="Folder" runat="server">
+  </asp:ContentPlaceHolder>
+
+
 
     </form>
 </body>

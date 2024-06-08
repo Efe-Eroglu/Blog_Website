@@ -54,11 +54,17 @@ namespace BlogProjem
 
 
                 //Makale okunma sayısı
-
                 SqlCommand cmdokuma = new SqlCommand("update Blog set blogOkunma=blogOkunma+1 where blogID='" +blogID+"'",baglan.baglan());
                 cmdokuma.ExecuteNonQuery();
 
 
+                //Yorum Getir
+                SqlCommand cmdyorumgetir = new SqlCommand("select * from Yorum where blogID=@id and yorumOnay=@onay",baglan.baglan());
+                cmdyorumgetir.Parameters.AddWithValue("@id",blogID);
+                cmdyorumgetir.Parameters.AddWithValue("@onay",1);
+                SqlDataReader drygetir = cmdyorumgetir.ExecuteReader();
+                DataList2.DataSource = drygetir;
+                DataList2.DataBind();
             }
         }
 
@@ -78,6 +84,9 @@ namespace BlogProjem
             cmdyorum.Parameters.AddWithValue("@resim","/tema/duyuru.jpg");
 
             cmdyorum.ExecuteNonQuery();
+
+
+            Response.Redirect("bloglar.aspx");
 
         }
     }

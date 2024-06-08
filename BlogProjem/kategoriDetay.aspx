@@ -21,8 +21,8 @@
             background-color: #f4f4f9;
             font-family: 'Poppins', sans-serif;
             color: #0c0c0c;
-            background-color:silver;
-            }
+            background-color: silver;
+        }
 
         .header_section {
             background-image: url('images/hero-bg.jpg');
@@ -263,7 +263,7 @@
                                             <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>">
                                                 <asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
                                             </a>
-                                           
+
                                         </td>
                                     </tr>
                                 </table>
@@ -279,7 +279,8 @@
                         <div class="blogContainer">
                             <asp:Image ID="Image3" runat="server" CssClass="blogImage" ImageUrl='<%# Eval("blogResim") %>' />
                             <div class="blogTitle">
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("blogBaslik") %>'></asp:Label>
+                                <a href="makaleDetay.aspx?blogID=<%#Eval("blogID") %>">
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("blogBaslik") %>'></asp:Label></a>
                             </div>
                             <div class="blogSummary">
                                 <asp:Label ID="Label5" runat="server" Text='<%# Eval("blogOzet") %>'></asp:Label>

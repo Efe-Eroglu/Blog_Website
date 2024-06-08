@@ -24,6 +24,8 @@ namespace BlogProjem
 
             if (dr.Read())
             {
+                Session["kullanici"] = dr["kullanici"];
+
                 Response.Write("<script>alert('Giriş Başarılı!');</script>");
                 Response.Redirect("Default.aspx");
             }

@@ -74,7 +74,7 @@
             }
 
         h1 {
-            color: #ed8207; /* Turuncu renk */
+            color: #ed8207;
             text-align: center;
             margin-bottom: 40px;
             font-size: 48px;
@@ -84,6 +84,9 @@
 </head>
 
 <body>
+
+
+
     <form id="form1" runat="server">
         <h1>Admin Giriş Paneli</h1>
         <div class="login-container">

@@ -17,6 +17,11 @@ namespace BlogProjem.admin
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["yoneticiKullanici"] == null) 
+            {
+                Response.Redirect("default.aspx");
+            }
+
             blogID = Request.QueryString["blogID"];
             islem = Request.QueryString["islem"];
 
@@ -31,6 +36,7 @@ namespace BlogProjem.admin
             {
                 pnl_blog.Visible = false;
                 pnl_blogDuzenle.Visible = false;
+                pnl_dosyaEkle.Visible = false;
 
                 SqlCommand cmdkgetir = new SqlCommand("select * from Kategori",baglan.baglan());
                 SqlDataReader drkgetir = cmdkgetir.ExecuteReader(); 
@@ -81,6 +87,9 @@ namespace BlogProjem.admin
                 SqlCommand cmdmekle = new SqlCommand("insert into Blog(blogBaslik, blogOzet, blogIcerik, blogResim, kategoriID) values ('" + txt_baslik.Text + "','" + txt_ozet.Text + "','" + txt_icerik.Text + "','/sresim/" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
                 cmdmekle.ExecuteNonQuery();
 
+                SqlCommand cmdkadet = new SqlCommand("update Kategori Set kategoriAdet=kategoriAdet+1 where kategoriID='"+ddl_kategori.SelectedValue+"'",baglan.baglan());
+                cmdkadet.ExecuteNonQuery();
+
                 Response.Redirect("makaleler.aspx");
 
             }
@@ -94,6 +103,29 @@ namespace BlogProjem.admin
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_BlogDosyaEkleArti(object sender, EventArgs e)
+        {
+            pnl_dosyaEkle.Visible = true;  
+        }
+
+        protected void btn_BlogDosyaEkleEksi(object sender, EventArgs e)
+        {
+            pnl_dosyaEkle.Visible = false;
+        }
+
+        protected void btn_ekle_Click(object sender, EventArgs e)
+        {
+            if (fu_dosya.HasFile) 
+            {
+                fu_dosya.SaveAs(Server.MapPath("/dosyalar/" + fu_dosya.FileName));
+                Response.Redirect("makaleler.aspx");
+            }
+            else
+            {
+                btn_ekle.Text = "Dosya Eklenmedi !!!";
+            }
         }
     }
 }

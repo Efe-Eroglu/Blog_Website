@@ -13,5 +13,14 @@ namespace BlogProjem
 
     public partial class _Default
     {
+
+        /// <summary>
+        /// btnSend denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSend;
     }
 }

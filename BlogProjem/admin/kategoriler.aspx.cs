@@ -17,7 +17,13 @@ namespace BlogProjem.admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+
+
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+
             kategoriID = Request.QueryString["kategoriID"];
             islem = Request.QueryString["islem"];
 
@@ -30,6 +36,7 @@ namespace BlogProjem.admin
             if (Page.IsPostBack == false) 
             {
                 pnl_kategoriEkle.Visible = false;
+                pnl.Visible = false;
             }
 
 
@@ -42,12 +49,12 @@ namespace BlogProjem.admin
 
         protected void btn_kdEksi_Click(object sender, EventArgs e)
         {
-            pnl_kategoriDuzenle.Visible = false;
+            pnl.Visible = false;
         }
 
         protected void btn_kdArti_Click(object sender, EventArgs e)
         {
-            pnl_kategoriDuzenle.Visible = true;
+            pnl.Visible = true;
         }
 
         protected void btn_keEksiClick(object sender, EventArgs e)

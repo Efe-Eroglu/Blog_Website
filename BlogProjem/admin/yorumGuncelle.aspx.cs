@@ -16,7 +16,11 @@ namespace BlogProjem.admin
         string blogID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Postback sırasında da yorumID'yi tekrar almak için buraya taşıdım.
+            if (Session["yoneticiKullanici"] == null)
+            {
+                Response.Redirect("default.aspx");
+            }
+            
             yorumID = Request.QueryString["yorumID"];
             blogID = Request.QueryString["blogID"];
 
