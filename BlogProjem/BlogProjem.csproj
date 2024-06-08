@@ -455,6 +455,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\about-img.png" />
+    <Content Include="images\admin_icon.jpg" />
     <Content Include="images\body_bg.jpg" />
     <Content Include="images\call-o.png" />
     <Content Include="images\call.png" />

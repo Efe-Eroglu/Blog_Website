@@ -15,18 +15,19 @@
         <div id="wrapper">
             <div id="sidebar">
                 <div id="profile">
-                    <span id="name">Efe Eroğlu</span>
+                    <a href="adminpanel.aspx">
+                        <img src="../images/admin_icon.jpg" alt="admin" />
+                    </a><span id="name">Hoşgeldin Admin</span>
                     <span class="status online">Online</span>
                 </div>
-                <input type="text" placeholder="Search..." />
                 <nav id="mainMenu">
                     <ul>
-                        <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i> Ana Sayfa</a></li>
-                        <li><a href="kategoriler.aspx"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Kategoriler</a></li>
-                        <li><a href="makaleler.aspx"><i class="fa-regular fa-file-lines"></i> Bloglar</a></li>
-                        <li><a href="duyurular.aspx"><i class="fa-solid fa-bullhorn"></i> Duyurular</a></li>
-                        <li><a href="yorumlar.aspx"><i class="fa-regular fa-comment"></i> Yorumlar</a></li>
-                        <li><a href="default.aspx?log=null"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+                        <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i>Ana Sayfa</a></li>
+                        <li><a href="kategoriler.aspx"><i class="fa-solid fa-list" style="color: #ffffff;"></i>Kategoriler</a></li>
+                        <li><a href="makaleler.aspx"><i class="fa-regular fa-file-lines"></i>Bloglar</a></li>
+                        <li><a href="duyurular.aspx"><i class="fa-solid fa-bullhorn"></i>Duyurular</a></li>
+                        <li><a href="yorumlar.aspx"><i class="fa-regular fa-comment"></i>Yorumlar</a></li>
+                        <li><a href="default.aspx?log=null"><i class="fa fa-sign-out"></i>Çıkış</a></li>
                     </ul>
                 </nav>
             </div>

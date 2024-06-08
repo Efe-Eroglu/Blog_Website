@@ -37,7 +37,7 @@
             }
 
             .form-group input[type="file"] {
-                background-color: #a1c2aa; /* Arka plan rengi */
+                background-color: cadetblue; /* Arka plan rengi */
                 color: #fff; /* Metin rengi */
                 border: 1px solid #007bff; /* Kenarlık */
                 border-radius: 25px; /* Köşe yuvarlaklığı */
@@ -50,7 +50,7 @@
                 /* Dosya seç butonu için durum değişikliği */
                 .form-group input[type="file"]:hover,
                 .form-group input[type="file"]:focus {
-                    background-color: #6aad7c; /* Arka plan rengi */
+                    background-color: darkcyan; /* Arka plan rengi */
                     border-color: #0056b3; /* Kenarlık rengi */
                 }
 
@@ -58,7 +58,7 @@
         .btn-primary {
             width: 100%;
             padding: 12px;
-            background-color: #18994c;
+            background-color: cadetblue;
             border: none;
             border-radius: 20px; /* Köşeleri daha yuvarlak yap */
             color: #fff;
@@ -69,7 +69,7 @@
         }
 
             .btn-primary:hover {
-                background-color: #257a3c;
+                background-color: darkcyan;
             }
     </style>
 </asp:Content>

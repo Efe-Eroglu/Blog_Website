@@ -3,108 +3,108 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style type="text/css">
+        .action-button {
+            height: 35px;
+            width: 80px;
+            margin-right: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
 
-    .action-button {
-        height: 35px;
-        width: 80px;
-        margin-right: 10px;
-        border: none;
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 24px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition-duration: 0.4s;
-    }
+        .action-button:hover {
+            background-color: #45a049;
+        }
 
-    .action-button:hover {
-        background-color: #45a049;
-    }
+        .panel-style {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
 
-    .panel-style {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        margin-bottom: 20px;
-    }
+        .panel-style:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
 
-    .panel-style:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
+        .form-table {
+            width: 100%;
+        }
 
-    .form-table {
-        width: 100%;
-    }
+        .label-column {
+            width: 30%;
+            text-align: right;
+            color: #666666;
+            font-weight: bold;
+            padding-right: 10px;
+        }
 
-    .label-column {
-        width: 30%;
-        text-align: right;
-        color: #666666;
-        font-weight: bold;
-    }
+        .textboxGorsel {
+            height: 30px;
+            width: calc(100% - 20px);
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
-    .textboxGorsel {
-        height: 30px;
-        width: calc(100% - 20px);
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
+        .section-header {
+            height: 40px;
+            background-color: #2a595a;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
 
-    .section-header {
-        height: 40px;
-        background-color: #2a595a;
-        color: #fff;
-        font-weight: bold;
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        border-radius: 10px;
-    }
+        .data-list {
+            width: 100%;
+        }
 
-    .data-list {
-        width: 100%;
-    }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
 
-    .data-table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #f9f9f9;
-    }
+        .data-table td, .data-table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
 
-    .data-table td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
+        .data-table th {
+            background-color: #2a595a;
+            color: white; 
+        }
 
-    .data-table th {
-        border: 1px solid #ddd;
-        padding: 10px;
-        background-color: #2a595a;
-        color: white; 
-    }
+        #ikon {
+            color: darkslategray;
+        }
 
-    #ikon{
-        color:darkslategray;
-    }
+        #ikon:hover {
+            color: darkcyan;
+        }
 
-    #ikon:hover{
-        color:darkcyan;
-    }
-
-    strong{
-        font-size:20px;
-    }
-</style>
-
+        strong {
+            font-size: 20px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -137,13 +137,11 @@
                 <tr>
                     <td class="label-column"></td>
                     <td>
-                        <asp:Button ID="btn_kategoriEkle" runat="server" CssClass="action-button" Text="Ekle" OnClick="btn_kategoriEkleme"></asp:Button>
+                        <asp:Button ID="btn_kategoriEkle" runat="server" CssClass="action-button" Text="Ekle"  OnClick="btn_kategoriEkleme" />
                     </td>
                 </tr>
             </table>
         </asp:Panel> 
-
-        <div class="spacer"></div>
 
         <div class="section-header">
             <asp:Button ID="btn_kdArti" runat="server" CssClass="action-button" Text="+" OnClick="btn_kdArti_Click" />
@@ -156,9 +154,9 @@
                 <HeaderTemplate>
                     <table class="data-table">
                         <tr>
-                            <td><strong>Kategori Ad</strong></td>
-                            <td><strong>Düzenle</strong></td>
-                            <td><strong>Sil</strong></td>
+                            <th><strong>Kategori Adı</strong></th>
+                            <th><strong>Düzenle</strong></th>
+                            <th><strong>Sil</strong></th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>

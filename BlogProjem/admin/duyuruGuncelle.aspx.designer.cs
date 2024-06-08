@@ -15,6 +15,15 @@ namespace BlogProjem.admin
     {
 
         /// <summary>
+        /// pnl_DuyuruGuncelle denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnl_DuyuruGuncelle;
+
+        /// <summary>
         /// txt_baslik denetimi.
         /// </summary>
         /// <remarks>
