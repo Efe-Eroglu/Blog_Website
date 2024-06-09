@@ -1,4 +1,4 @@
-# <p align="center" Kişisel Blog Sitesi </p>
+# <p align="center"> Kişisel Blog Sitesi </p>
 
 Bu proje, kullanıcıların blog yazılarını okuyabileceği ve yorum yapabileceği, admin paneli üzerinden ise kategori, blog ve yorum gibi içerikleri ekleyip, güncelleyip, silebileceği bir kişisel blog sitesidir.
 <br>
