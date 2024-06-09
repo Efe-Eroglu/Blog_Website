@@ -81,9 +81,9 @@ namespace BlogProjem
 
         protected void btnYorumYap_Click(object sender, EventArgs e)
         {
-            SqlCommand cmdyorum = new SqlCommand("insert into Yorum(yorumAdSoyad, yorumEmail, yorumIcerik, yorumResim, blogID) Values(@ad, @mail, @icerik, @resim,@id)", baglan.baglan());
+
+            SqlCommand cmdyorum = new SqlCommand("insert into Yorum(yorumAdSoyad, yorumIcerik, yorumResim, blogID) Values(@ad, @icerik, @resim,@id)", baglan.baglan());
             cmdyorum.Parameters.AddWithValue("@ad",txt_ad.Text);
-            cmdyorum.Parameters.AddWithValue("@mail",txt_mail.Text);
             cmdyorum.Parameters.AddWithValue("@icerik",txtYorum.Text);
             cmdyorum.Parameters.AddWithValue("@id",blogID);
             cmdyorum.Parameters.AddWithValue("@resim","/tema/user.png");

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.UI;
+using Newtonsoft.Json;
 
 namespace BlogProjem.admin
 {
@@ -42,13 +44,35 @@ namespace BlogProjem.admin
                 SqlCommand kategoriCmd = new SqlCommand("SELECT COUNT(*) FROM Kategori", connection);
                 int kategoriCount = (int)kategoriCmd.ExecuteScalar();
 
+                // Kategorilere göre blog sayıları
+                SqlCommand kategoriBlogCmd = new SqlCommand(
+                    "SELECT Kategori.kategoriAd, COUNT(Blog.blogID) AS BlogSayisi " +
+                    "FROM Kategori " +
+                    "LEFT JOIN Blog ON Kategori.kategoriID = Blog.kategoriID " +
+                    "GROUP BY Kategori.kategoriAd", connection);
+
+                SqlDataReader reader = kategoriBlogCmd.ExecuteReader();
+
+                var kategoriAdlari = new List<string>();
+                var blogSayilari = new List<int>();
+
+                while (reader.Read())
+                {
+                    kategoriAdlari.Add(reader["kategoriAd"].ToString()); 
+                    blogSayilari.Add((int)reader["BlogSayisi"]);
+                }
+                reader.Close();
+
                 // Scriptleri oluştur ve sayfaya ekle
-                ClientScript.RegisterStartupScript(this.GetType(), "charts", $@"
+                string script = $@"
                     var yorumCount = {yorumCount};
                     var kullaniciCount = {kullaniciCount};
                     var blogCount = {blogCount};
                     var kategoriCount = {kategoriCount};
-                ", true);
+                    var kategoriAdlari = {JsonConvert.SerializeObject(kategoriAdlari)};
+                    var blogSayilari = {JsonConvert.SerializeObject(blogSayilari)};
+                ";
+                ClientScript.RegisterStartupScript(this.GetType(), "charts", script, true);
             }
             finally
             {

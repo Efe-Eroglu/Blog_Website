@@ -1,23 +1,17 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BlogProjem.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="tr">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Blog</title>
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-
-    
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -26,8 +20,6 @@
         <link href="Content/style.css" rel="stylesheet" />
         <link href="Content/responsive.css" rel="stylesheet" />
     </asp:ContentPlaceHolder>
-
-
 </head>
 <body>
     <form runat="server">
@@ -44,80 +36,60 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-
-
             </Scripts>
         </asp:ScriptManager>
 
         <div class="hero_area">
+            <header class="header_section">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                        <a class="navbar-brand mr-5" href="/">
+                            <img src="images/logo.png" alt="">
+                            <span>Dev Blog</span>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="bloglar.aspx">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Default.aspx#About">Hakkımızda</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Default.aspx#Contact">İletişim</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login.aspx" id="loginLink" runat="server">Giriş Yap</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.aspx" id="registerLink" runat="server">Kayıt Ol</a>
+                                    </li>
+                                </ul>
+                                <form class="form-inline">
+                                    <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
 
-          <header class="header_section">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-      <a class="navbar-brand mr-5" href="/">
-        <img src="images/logo.png" alt="">
-        <span>Dev Blog</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-          <ul class="navbar-nav">
-          
-            <li class="nav-item">
-              <a class="nav-link" href="bloglar.aspx">Blog</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="Default.aspx#About">Hakkımızda</a>
-            </li>
-          
-              <li class="nav-item">
-              <a class="nav-link" href="Default.aspx#Contact">İletişim</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="login.aspx">Giriş Yap</a>
-            </li>
-                 <li class="nav-item">
-      <a class="nav-link" href="register.aspx">Kayıt Ol</a>
-   </li>
-
-          </ul>
-          <form class="form-inline">
-            <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-          </form>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+                <section class="container-fluid footer_section">
+                    <p>
+                        Copyright &copy; 2024 All Rights Reserved By Efe EROĞLU
+                    </p>
+                </section>
+                <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
+                <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="Folder" runat="server"></asp:ContentPlaceHolder>
         </div>
-      </div>
-    </nav>
-  </div>
-</header>
-
-
-  <asp:ContentPlaceHolder ID="MainContent" runat="server">
-      
-      
-  </asp:ContentPlaceHolder>
-      
-      
-  <asp:ContentPlaceHolder ID="FooterContent" runat="server">
-      <section class="container-fluid footer_section">
-          <p>
-              Copyright &copy; 2024 All Rights Reserved By Efe EROĞLU
-          </p>
-      </section>
-
-      <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
-      <script type="text/javascript" src="Scripts/bootstrap.js"></script>
- 
-  </asp:ContentPlaceHolder>
-
-  <asp:ContentPlaceHolder ID="Folder" runat="server">
-  </asp:ContentPlaceHolder>
-
-
-
     </form>
 </body>
 </html>

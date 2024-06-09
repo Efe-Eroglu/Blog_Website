@@ -19,12 +19,22 @@
             height: 100%;
             font-family: 'Poppins', sans-serif;
             color: #0c0c0c;
-            background-color: aliceblue;
+            background-image: url("images/hero-bg.jpg");
+            background-size: cover;
         }
 
         .kategoriler a:hover {
             font-size: 1.1em;
         }
+
+        .amazingslider-wrapper, .amazingslider {
+            box-shadow: 0 0 20px rgba(224, 76, 22, 0.5), 0 0 40px rgba(224, 76, 22, 0.5), 0 0 60px rgba(224, 76, 22, 0.5);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+            .amazingslider-wrapper:hover, .amazingslider:hover {
+                box-shadow: 0 0 30px rgba(224, 76, 22, 0.7), 0 0 60px rgba(224, 76, 22, 0.7), 0 0 90px rgba(224, 76, 22, 0.7);
+            }
 
         a {
             transition: font-size 0.5s ease;
@@ -83,7 +93,6 @@
                 font-size: 16px;
             }
 
-
             .custom_nav-container .nav_search-btn {
                 background: url('../images/search-icon.png') no-repeat center center;
                 background-size: 22px;
@@ -115,6 +124,9 @@
 
         .leftArea {
             width: 300px;
+            margin-top: 10px;
+            font-family:Calibri;
+
         }
 
         .duyurular, .kategoriler {
@@ -182,21 +194,21 @@
         }
 
         .yorum-panel {
-            background-color: white; /* Yumuşak bir arka plan rengi */
+            font-family:Calibri;
+            background-color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
             margin: 10px;
-            width: 1060px;
+            width:92%;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
             .yorum-panel h2 {
-                font-size: 24px; /* Daha büyük başlık boyutu */
-                color: #333; /* Daha belirgin bir renk */
-                margin-bottom: 20px; /* Biraz daha fazla boşluk */
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
             }
-
 
             .yorum-panel hr {
                 border: 0;
@@ -205,13 +217,12 @@
             }
 
         .yorumlar {
-            margin-bottom: 30px; /* Daha fazla boşluk */
+            margin-bottom: 30px;
         }
 
         .yorum-yap {
-            margin-top: 20px; /* Yorum yap bölümü ile yorumlar arasına biraz boşluk ekleyelim */
+            margin-top: 20px;
         }
-
 
         .yorum {
             margin-bottom: 15px;
@@ -229,17 +240,15 @@
                 font-size: 12px;
             }
 
+        .yorum-yap input[type="text"],
+        .yorum-yap input[type="email"],
         .yorum-yap textarea {
-            width: 80%;
+            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             resize: vertical;
-        }
-
-        .katResim {
-            border-radius: 15px;
         }
 
         .yorum-yap button {
@@ -270,6 +279,29 @@
             text-align: justify;
             margin-bottom: 10px;
         }
+
+        .katResim {
+            border-radius: 15px;
+        }
+
+        .btnYorumYap {
+            background-color: cadetblue;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+            .btnYorumYap:hover {
+                background-color: darkcyan;
+            }
     </style>
 </head>
 <body>
@@ -300,19 +332,16 @@
             </div>
         </header>
 
-        <div class="slider">
+        <div class="slider" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="amazingslider-wrapper" id="amazingslider-wrapper-1" style="display: block; position: relative; max-width: 900px; margin: 0 auto;">
                 <div class="amazingslider" id="amazingslider-1" style="display: block; position: relative; margin: 0 auto;">
                     <ul class="amazingslider-slides" style="display: none;">
                         <asp:DataList ID="dl_slider" runat="server">
                             <ItemTemplate>
                                 <li>
-
                                     <a href="makaledetay.aspx?blogID=<%#Eval("blogID") %>">
-
                                         <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
                                     </a>
-
                                 </li>
                             </ItemTemplate>
                         </asp:DataList>
@@ -331,8 +360,8 @@
                             <ItemTemplate>
                                 <table>
                                     <tr>
-                                        <td style="width: 55px;">
-                                            <asp:Image ID="Image1" runat="server" Height="38px" ImageUrl='<%# Eval("duyurularResim") %>' Width="53px" />
+                                        <td style="width: 45px;">
+                                            <asp:Image ID="Image1" runat="server" Height="35px" ImageUrl='<%# Eval("duyurularResim") %>' Width="40px" />
                                         </td>
                                         <td style="font-size: 18px; font-weight: bold;">
                                             <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("duyurularBaslik") %>'></asp:Literal>
@@ -370,7 +399,6 @@
                                                 <asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
                                             </a>
                                             <span style="font-size: 12px; color: gray;">(<asp:Literal ID="Literal5" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Literal>)
-
                                             </span>
                                         </td>
                                     </tr>
@@ -418,52 +446,45 @@
                         <asp:DataList ID="DataList2" runat="server">
                             <ItemTemplate>
                                 <div style="display: flex">
-
-                                    <div style="margin: 20px; ">
+                                    <div style="margin: 20px;">
                                         <asp:Image ID="Image4" runat="server" Height="100px" ImageUrl='<%# Eval("yorumResim") %>' Width="100px" />
                                     </div>
-
                                     <div style="margin-top: 20px;">
-                                        <div style="font-weight:bold; font-size:18px">
+                                        <div style="font-weight: bold; font-size: 18px">
                                             <asp:Label ID="Label6" runat="server" Text='<%# Eval("yorumAdSoyad") %>'></asp:Label>
                                         </div>
-
-                                        <div style="font-size:16px; margin-bottom:10px;">
-
+                                        <div style="font-size: 16px; margin-bottom: 10px;">
                                             <asp:Label ID="Label8" runat="server" Text='<%# Eval("yorumIcerik") %>'></asp:Label>
                                         </div>
-
                                         <div style="color: gray; font-size: 12px">
                                             <asp:Label ID="Label7" runat="server" Text='<%# Eval("yorumTarih","{0:dd MMMM yyyy}") %>'></asp:Label>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </ItemTemplate>
                         </asp:DataList>
                     </div>
-
 
                     <hr />
 
                     <h3>Yorum Yap</h3>
 
                     <div class="yorum-yap">
-                        Ad Soyad
-                        <asp:TextBox ID="txt_ad" runat="server" placeholder="Ad Soyad"></asp:TextBox>
-                        Mail
-                        <asp:TextBox ID="txt_mail" runat="server" placeholder="Mail"></asp:TextBox>
-                        <asp:TextBox ID="txtYorum" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" placeholder="Yorumunuzu buraya yazınız..."></asp:TextBox>
-                        <asp:Button ID="btnYorumYap" runat="server" Text="Yorum Yap" CssClass="btn btn-primary" OnClick="btnYorumYap_Click" />
+                        <div class="yorumBilgi">
+                            <div style="max-width: 400px;">
+                                Ad Soyad :
+                                <asp:TextBox ID="txt_ad" runat="server" placeholder="Ad Soyad"></asp:TextBox>
+                            </div>
+                        </div>
+
+                        <div class="yorumIcerik" style="max-width: 95%">
+                            <asp:TextBox ID="txtYorum" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" placeholder="Yorumunuzu buraya yazınız..."></asp:TextBox>
+                        </div>
+
+                        <asp:Button ID="btnYorumYap" runat="server" Text="Yorum Yap" CssClass="btnYorumYap" OnClick="btnYorumYap_Click" />
                     </div>
                 </div>
-
-
             </div>
-
-
-
         </div>
 
         <div class="footer">

@@ -16,7 +16,7 @@
             <div id="sidebar">
                 <div id="profile">
                     <a href="adminpanel.aspx">
-                        <img src="../images/admin_icon.jpg" alt="admin" />
+                        <img src="../tema/admin.png" alt="admin" />
                     </a><span id="name">Hoşgeldin Admin</span>
                     <span class="status online">Online</span>
                 </div>

@@ -78,15 +78,6 @@ namespace BlogProjem
         protected global::System.Web.UI.WebControls.TextBox txt_ad;
 
         /// <summary>
-        /// txt_mail denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_mail;
-
-        /// <summary>
         /// txtYorum denetimi.
         /// </summary>
         /// <remarks>

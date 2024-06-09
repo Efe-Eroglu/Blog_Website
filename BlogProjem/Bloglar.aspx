@@ -19,8 +19,17 @@
             height: 100%;
             font-family: 'Poppins', sans-serif;
             color: #0c0c0c;
-            background-color: aliceblue;
+            background-image: url("images/hero-bg.jpg");
+            background-size: cover;
         }
+        .amazingslider-wrapper, .amazingslider {
+            box-shadow: 0 0 20px rgba(224, 76, 22, 0.5), 0 0 40px rgba(224, 76, 22, 0.5), 0 0 60px rgba(224, 76, 22, 0.5);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+            .amazingslider-wrapper:hover, .amazingslider:hover {
+                box-shadow: 0 0 30px rgba(224, 76, 22, 0.7), 0 0 60px rgba(224, 76, 22, 0.7), 0 0 90px rgba(224, 76, 22, 0.7);
+            }
 
         .header_section {
             background-image: url('images/hero-bg.jpg');
@@ -99,7 +108,7 @@
 
         .kategoriler a:hover {
             font-size: 1.1em;
-            }
+        }
 
         a {
             transition: font-size 0.5s ease;
@@ -114,12 +123,13 @@
         }
 
         .leftArea {
-            margin-top: 30px;
+            margin-top: 10px;
             width: 300px;
+            font-family:Calibri;
         }
 
         .duyurular, .kategoriler {
-            background-color: #f4f4f9;
+            background-color: white;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -130,7 +140,7 @@
             flex: 1;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;  
         }
 
         .blogContainer {
@@ -231,7 +241,7 @@
             </div>
         </header>
 
-        <div class="slider">
+        <div class="slider" style="margin-top:50px; margin-bottom:50px;">
             <div class="amazingslider-wrapper" id="amazingslider-wrapper-1" style="display: block; position: relative; max-width: 900px; margin: 0 auto;">
                 <div class="amazingslider" id="amazingslider-1" style="display: block; position: relative; margin: 0 auto;">
                     <ul class="amazingslider-slides" style="display: none;">
@@ -253,22 +263,22 @@
         <div class="container">
             <div class="leftArea">
                 <div class="duyurular">
-                    <h2 style="color:darkcyan; text-align:center;">Duyurular</h2>
+                    <h2 style="color: darkcyan; text-align: center;">Duyurular</h2>
                     <hr />
                     <div class="icerik">
                         <asp:DataList ID="dl_duyuru" runat="server" Width="294px">
                             <ItemTemplate>
                                 <table>
                                     <tr>
-                                        <td style="width: 53px;">
-                                            <asp:Image ID="Image1" runat="server" Height="38px" ImageUrl='<%# Eval("duyurularResim") %>' Width="53px" />
+                                        <td style="width: 45px;">
+                                            <asp:Image ID="Image1" runat="server" Height="35px" ImageUrl='<%# Eval("duyurularResim") %>' Width="40px" />
                                         </td>
                                         <td style="font-size: 18px; font-weight: bold">
                                             <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("duyurularBaslik") %>'></asp:Literal>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="font-size: 16px;" class="icerik">
+                                        <td colspan="2" style="font-size: 16px; margin-bottom:10px;" class="icerik">
                                             <asp:Literal ID="Literal2" runat="server" Text='<%# Eval("duyurularIcerik") %>'></asp:Literal>
                                         </td>
                                     </tr>
@@ -284,7 +294,7 @@
                 </div>
 
                 <div class="kategoriler">
-                    <h2 style="color:darkcyan; text-align:center;">Kategoriler</h2>
+                    <h2 style="color: darkcyan; text-align: center;">Kategoriler</h2>
                     <hr />
                     <div class="icerik">
                         <asp:DataList ID="dl_kategori" runat="server">
