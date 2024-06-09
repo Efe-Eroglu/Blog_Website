@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Net;
 using System.Net.Mail;
-using System.Web.Services;
 using System.Web.UI;
 
 namespace BlogProjem
@@ -9,39 +9,47 @@ namespace BlogProjem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        [WebMethod]
-        public static string SendEmail(string isim, string email, string mesaj)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            // Kutuların boş olup olmadığını kontrol et
-            if (string.IsNullOrEmpty(isim) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(mesaj))
-            {
-                return "Lütfen tüm alanları doldurun.";
-            }
+            string name = isim.Text;
+            string email = txtEmail.Text; 
+            string message = Request.Form["mesaj"].ToString(); 
 
             try
             {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                SmtpClient client = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential("denemehesabi09812@gmail.com", "mbisapnakfjnlthb"),
+                    EnableSsl = true
+                };
 
-                mail.From = new MailAddress("denemehesabi09812@gmail.com");
-                mail.To.Add("denemehesabi09812@gmail.com");
-                mail.Subject = "İletişim Formu: " + isim;
-                mail.Body = "E-posta: " + email + "\n\nMesaj: " + mesaj;
+                MailMessage mailMessage = new MailMessage
+                {
+                    From = new MailAddress("denemehesabi09812@gmail.com"),
+                    Subject = "Blog Kullanıcısından Mesajın Var",
+                    Body = $"Name: {name}\nEmail: {email}\nMessage:{message}"
+                };
+                mailMessage.To.Add("denemehesabi09812@gmail.com");
 
-                SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("denemehesabi09812@gmail.com", "xlkowvldcesjpdqz"); 
-                SmtpServer.EnableSsl = true;
+                client.Send(mailMessage);
 
-                SmtpServer.Send(mail);
-
-                return "E-posta başarıyla gönderildi.";
+                Response.Write("<script>alert('Mesajınız Tarafımıza İletildi.');</script>");
+            }
+            catch (SmtpFailedRecipientException ex)
+            {
+                Response.Write($"<script>alert('Mail Gönderilemedi: {ex.FailedRecipient}. Hata: {ex.Message}');</script>");
+            }
+            catch (SmtpException ex)
+            {
+                Response.Write($"<script>alert('SMTP error: {ex.Message}');</script>");
             }
             catch (Exception ex)
             {
-                return "E-posta gönderilirken hata oluştu: " + ex.Message;
+                Response.Write($"<script>alert('An error occurred: {ex.Message}');</script>");
             }
         }
     }

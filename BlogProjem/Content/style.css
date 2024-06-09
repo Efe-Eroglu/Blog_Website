@@ -434,7 +434,7 @@ a:focus {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.contact_section .contact_form button {
+.contact_section .contact_form .button {
   display: inline-block;
   padding: 8px 35px;
   background-color: #e93f1a;
@@ -452,6 +452,25 @@ a:focus {
   border-color: #e93f1a;
   color: #e93f1a;
 }
+
+    .contact_section .contact_form button {
+        display: inline-block;
+        padding: 8px 35px;
+        background-color: #e93f1a;
+        color: #ffffff;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-bottom: 45px;
+    }
+
+        .contact_section .contact_form .button:hover {
+            background-color: transparent;
+            border-color: #e93f1a;
+            color: #e93f1a;
+        }
 
 .contact_section .img-box img {
   width: 100%;
