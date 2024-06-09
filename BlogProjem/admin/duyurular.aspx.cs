@@ -64,7 +64,7 @@ namespace BlogProjem.admin
             SqlCommand cmddekle = new SqlCommand("insert into Duyurular (duyurularBaslik, duyurularIcerik, duyurularResim) values (@baslik, @icerik, @resim)", baglan.baglan());
             cmddekle.Parameters.AddWithValue("@baslik", txt_baslik.Text);
             cmddekle.Parameters.AddWithValue("@icerik", txt_icerik.Text);
-            cmddekle.Parameters.AddWithValue("@resim", "/tema/duyuru.jpg");
+            cmddekle.Parameters.AddWithValue("@resim", "/tema/bildirim.png");
 
             cmddekle.ExecuteNonQuery();
 

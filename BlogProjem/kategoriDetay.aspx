@@ -18,10 +18,9 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #f4f4f9;
             font-family: 'Poppins', sans-serif;
             color: #0c0c0c;
-            background-color: silver;
+            background-color: aliceblue;
         }
 
         .header_section {
@@ -135,6 +134,10 @@
             box-sizing: border-box;
         }
 
+        .imgStil{
+            border-radius:15px;
+        }
+
         .blogImage {
             height: 150px;
             width: 100%;
@@ -146,6 +149,25 @@
             font-size: 18px;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        #linkler {
+            text-decoration: none;
+        }
+
+        .kategoriler a:hover {
+            font-size: 1.1em;
+        }
+
+        a {
+            transition: font-size 0.5s ease;
+            text-decoration: none;
+            color: darkcyan;
+        }
+
+        #linkler:active,
+        #linkler:visited {
+            color: darkcyan;
         }
 
         .blogSummary {
@@ -189,6 +211,9 @@
                             <a class="nav-link" href="/Default.aspx">Ana Sayfa</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="Bloglar.aspx">Bloglar</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="Default.aspx#About">Hakkımızda</a>
                         </li>
                         <li class="nav-item">
@@ -218,27 +243,27 @@
         <div class="container">
             <div class="leftArea">
                 <div class="duyurular">
-                    <h2>Duyurular</h2>
+                    <h2 style="color: darkcyan; text-align: center;">Duyurular</h2>
                     <hr />
                     <div class="icerik">
                         <asp:DataList ID="dl_duyuru" runat="server" Width="294px">
                             <ItemTemplate>
                                 <table>
                                     <tr>
-                                        <td>
-                                            <asp:Image ID="Image1" runat="server" Height="38px" ImageUrl='<%# Eval("duyurularResim") %>' Width="53px" />
+                                        <td style="width: 75px;">
+                                            <asp:Image ID="Image1" runat="server" Height="45px"  ImageUrl='<%# Eval("duyurularResim") %>' Width="75px" />
                                         </td>
-                                        <td>
+                                        <td style="font-size: 18px; font-weight: bold;">
                                             <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("duyurularBaslik") %>'></asp:Literal>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="2" style="font-size: 16px; text-align: justify; max-width: 250px;">
                                             <asp:Literal ID="Literal2" runat="server" Text='<%# Eval("duyurularIcerik") %>'></asp:Literal>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="2" style="font-size: 12px; border-bottom: 1px solid black; color: gray;">
                                             <asp:Literal ID="Literal3" runat="server" Text='<%# Eval("duyurularTarih","{0:dd MMMM yyyy}") %>'></asp:Literal>
                                         </td>
                                     </tr>
@@ -249,7 +274,7 @@
                 </div>
 
                 <div class="kategoriler">
-                    <h2>Kategoriler</h2>
+                    <h2 style="color: darkcyan; text-align: center;">Kategoriler</h2>
                     <hr />
                     <div class="icerik">
                         <asp:DataList ID="dl_kategori" runat="server">
@@ -257,12 +282,13 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <asp:Image ID="Image2" runat="server" Height="38px" ImageUrl='<%# Eval("kategoriResim") %>' Width="60px" />
+                                            <asp:Image ID="Image2" runat="server" Height="45px" CssClass="imgStil" ImageUrl='<%# Eval("kategoriResim") %>' Width="75px" />
                                         </td>
                                         <td>
-                                            <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>">
-                                                <asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
+                                            <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>" style="font-size:16px;">
+                                                &nbsp<asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
                                             </a>
+                                            <span style="font-size: 12px; color: gray;">(<asp:Literal ID="Literal5" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Literal>)</span>
 
                                         </td>
                                     </tr>

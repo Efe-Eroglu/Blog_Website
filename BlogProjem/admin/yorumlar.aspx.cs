@@ -38,10 +38,13 @@ namespace BlogProjem.admin
 
 
 
-                if (islem == "sil" || islem2 == "sil")
+                if (islem == "sil")
                 {
                     SqlCommand cmdsil = new SqlCommand("delete from Yorum where yorumID='" + yorumID + "'", baglan.baglan());
                     cmdsil.ExecuteNonQuery();
+
+                    SqlCommand cmdazalt = new SqlCommand("update Blog set blogYorumSayisi=blogYorumSayisi-1 where blogID='" + blogID + "'", baglan.baglan());
+                    cmdazalt.ExecuteNonQuery();
                 }
 
                 if (islem2 == "sil")

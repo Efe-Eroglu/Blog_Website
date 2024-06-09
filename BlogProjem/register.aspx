@@ -1,16 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="BlogProjem.register" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+
     <h1>Kullanıcı Kayıt Paneli</h1>
     <div class="register-container">
         <asp:HiddenField ID="hidStep" runat="server" />
         <asp:Panel ID="panelStep1" runat="server">
             <div>
-                <label for="txt_isim">İsim:</label>
+                <label for="txt_isim" style="margin-left:15px;">İsim:</label>
                 <asp:TextBox ID="txt_isim" runat="server"></asp:TextBox>
             </div>
             <div>
-                <label for="txt_soyisim">Soyisim:</label>
+                <label for="txt_soyisim" style="margin-left:15px;">Soyisim:</label>
                 <asp:TextBox ID="txt_soyisim" runat="server"></asp:TextBox>
             </div>
             <div>
@@ -19,15 +21,15 @@
         </asp:Panel>
         <asp:Panel ID="panelStep2" runat="server" Style="display:none;">
             <div>
-                <label for="txt_kullanici">Kullanıcı Adı:</label>
+                <label for="txt_kullanici" style="margin-left:15px;">Kullanıcı Adı:</label>
                 <asp:TextBox ID="txt_kullanici" runat="server"></asp:TextBox>
             </div>
             <div>
-                <label for="txt_sifre">Şifre:</label>
+                <label for="txt_sifre" style="margin-left:15px;">Şifre:</label>
                 <asp:TextBox ID="txt_sifre" runat="server" TextMode="Password"></asp:TextBox>
             </div>
             <div>
-                <label for="txt_email">E-posta:</label>
+                <label for="txt_email" style="margin-left:15px;">E-posta:</label>
                 <asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox>
             </div>
             <div>

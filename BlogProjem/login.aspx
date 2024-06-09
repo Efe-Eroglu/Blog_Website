@@ -4,11 +4,11 @@
      <h1>Kullanıcı Giriş Paneli</h1>
      <div class="login-container">
          <div>
-             <label for="txt_kullanici">Kullanıcı Adı:</label>
+             <label for="txt_kullanici" style="margin-left:15px;">Kullanıcı Adı:</label>
              <asp:TextBox ID="txt_kullanici" runat="server"></asp:TextBox>
          </div>
          <div>
-             <label for="txt_sifre">Şifre:</label>
+             <label for="txt_sifre" style="margin-left:15px;">Şifre:</label>
              <asp:TextBox ID="txt_sifre" runat="server" TextMode="Password"></asp:TextBox>
          </div>
          <div>

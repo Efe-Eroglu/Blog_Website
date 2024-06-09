@@ -588,6 +588,7 @@
     <Content Include="sresim\duyuru1.jpeg" />
     <Content Include="sresim\OverorUnderFitting-tn.png" />
     <Content Include="sresim\vectorbt-tn.png" />
+    <Content Include="tema\bildirim.png" />
     <Content Include="tema\box2.png" />
     <Content Include="tema\duyuru.jpg" />
     <Content Include="ViewSwitcher.ascx" />

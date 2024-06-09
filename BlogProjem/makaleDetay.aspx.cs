@@ -16,6 +16,11 @@ namespace BlogProjem
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["kullanici"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+
             blogID = Request.QueryString["blogID"];
 
             if (Page.IsPostBack == false) 
