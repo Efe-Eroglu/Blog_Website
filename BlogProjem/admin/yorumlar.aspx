@@ -68,13 +68,7 @@
             margin-bottom: 20px;
         }
 
-        .comment-image {
-            margin-right: 20px;
-            flex-shrink: 0;
-            width: 200px;
-            height: 300px;
-        }
-
+        
         .comment-info {
             flex-grow: 1;
         }
@@ -121,10 +115,10 @@
         }
 
         .commentImage {
-            width: 200px;
+            width: 250px;
             height: 300px;
-            border: 1px solid gray;
-        }
+            margin-right:50px;
+            }
 
 
     </style>

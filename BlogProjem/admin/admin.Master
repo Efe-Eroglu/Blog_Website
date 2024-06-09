@@ -22,7 +22,7 @@
                 </div>
                 <nav id="mainMenu">
                     <ul>
-                        <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i>Ana Sayfa</a></li>
+                        <li><a href="anasayfa.aspx"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                         <li><a href="kategoriler.aspx"><i class="fa-solid fa-list" style="color: #ffffff;"></i>Kategoriler</a></li>
                         <li><a href="makaleler.aspx"><i class="fa-regular fa-file-lines"></i>Bloglar</a></li>
                         <li><a href="duyurular.aspx"><i class="fa-solid fa-bullhorn"></i>Duyurular</a></li>

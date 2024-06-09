@@ -26,11 +26,19 @@ namespace BlogProjem.admin
             islem = Request.QueryString["islem"];
 
 
-            if (islem == "sil") 
+            if (islem == "sil" && !string.IsNullOrEmpty(blogID))
             {
-                SqlCommand cmdsil = new SqlCommand("delete from Blog where blogID='" + blogID +"'",baglan.baglan());
-                cmdsil.ExecuteNonQuery();
+                // Önce bloga bağlı yorumları siliyoruz
+                SqlCommand cmdYorumSil = new SqlCommand("DELETE FROM Yorum WHERE blogID=@blogID", baglan.baglan());
+                cmdYorumSil.Parameters.AddWithValue("@blogID", blogID);
+                cmdYorumSil.ExecuteNonQuery();
+
+                // Ardından blogu siliyoruz
+                SqlCommand cmdBlogSil = new SqlCommand("DELETE FROM Blog WHERE blogID=@blogID", baglan.baglan());
+                cmdBlogSil.Parameters.AddWithValue("@blogID", blogID);
+                cmdBlogSil.ExecuteNonQuery();
             }
+
 
             if (Page.IsPostBack == false) 
             {

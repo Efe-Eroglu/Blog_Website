@@ -31,7 +31,7 @@ namespace BlogProjem.admin
             SqlCommand cmdekle = new SqlCommand("insert into Yorum (yorumAdSoyad,yorumIcerik,yorumResim, yorumOnay,blogID) values (@ad,@icerik,@resim, @onay,@id)", baglan.baglan());
             cmdekle.Parameters.AddWithValue("@ad", txt_ad.Text);
             cmdekle.Parameters.AddWithValue("@icerik", txt_yorum.Text);
-            cmdekle.Parameters.AddWithValue("@resim","../sresim/d2.jpeg");
+            cmdekle.Parameters.AddWithValue("@resim","../tema/admin.png");
             cmdekle.Parameters.AddWithValue("@id",blogID);
             cmdekle.Parameters.AddWithValue("@onay",1);
 

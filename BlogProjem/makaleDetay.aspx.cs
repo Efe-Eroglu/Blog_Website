@@ -26,7 +26,7 @@ namespace BlogProjem
             if (Page.IsPostBack == false) 
             {
                 //Slider
-                SqlCommand cmdslider = new SqlCommand("Select * from Blog", baglan.baglan());
+                SqlCommand cmdslider = new SqlCommand("Select TOP 5 * from Blog order by blogOkunma DESC", baglan.baglan());
                 SqlDataReader drslider = cmdslider.ExecuteReader();
 
                 dl_slider.DataSource = drslider;
@@ -34,7 +34,7 @@ namespace BlogProjem
 
 
                 //Duyurular
-                SqlCommand cmdduyuru = new SqlCommand("select * from Duyurular", baglan.baglan());
+                SqlCommand cmdduyuru = new SqlCommand("select TOP 5 * from Duyurular order by duyurularID DESC", baglan.baglan());
                 SqlDataReader drduyuru = cmdduyuru.ExecuteReader();
 
                 dl_duyuru.DataSource = drduyuru;
@@ -86,7 +86,7 @@ namespace BlogProjem
             cmdyorum.Parameters.AddWithValue("@mail",txt_mail.Text);
             cmdyorum.Parameters.AddWithValue("@icerik",txtYorum.Text);
             cmdyorum.Parameters.AddWithValue("@id",blogID);
-            cmdyorum.Parameters.AddWithValue("@resim","/tema/duyuru.jpg");
+            cmdyorum.Parameters.AddWithValue("@resim","/tema/user.png");
 
             cmdyorum.ExecuteNonQuery();
 

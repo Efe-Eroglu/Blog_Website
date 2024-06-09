@@ -134,8 +134,8 @@
             box-sizing: border-box;
         }
 
-        .imgStil{
-            border-radius:15px;
+        .imgStil {
+            border-radius: 15px;
         }
 
         .blogImage {
@@ -231,7 +231,10 @@
                         <asp:DataList ID="dl_slider" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+                                    <a href="makaledetay.aspx?blogID=<%#Eval("blogID") %>">
+
+                                        <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+                                    </a>
                                 </li>
                             </ItemTemplate>
                         </asp:DataList>
@@ -251,7 +254,7 @@
                                 <table>
                                     <tr>
                                         <td style="width: 75px;">
-                                            <asp:Image ID="Image1" runat="server" Height="45px"  ImageUrl='<%# Eval("duyurularResim") %>' Width="75px" />
+                                            <asp:Image ID="Image1" runat="server" Height="45px" ImageUrl='<%# Eval("duyurularResim") %>' Width="75px" />
                                         </td>
                                         <td style="font-size: 18px; font-weight: bold;">
                                             <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("duyurularBaslik") %>'></asp:Literal>
@@ -285,8 +288,7 @@
                                             <asp:Image ID="Image2" runat="server" Height="45px" CssClass="imgStil" ImageUrl='<%# Eval("kategoriResim") %>' Width="75px" />
                                         </td>
                                         <td>
-                                            <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>" style="font-size:16px;">
-                                                &nbsp<asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
+                                            <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>" style="font-size: 16px;">&nbsp<asp:Literal ID="Literal4" runat="server" Text='<%# Eval("kategoriAd") %>'></asp:Literal>
                                             </a>
                                             <span style="font-size: 12px; color: gray;">(<asp:Literal ID="Literal5" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Literal>)</span>
 

@@ -181,21 +181,21 @@
             display: flex;
         }
 
-       .yorum-panel {
-    background-color: white; /* Yumuşak bir arka plan rengi */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    width: 1060px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+        .yorum-panel {
+            background-color: white; /* Yumuşak bir arka plan rengi */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 1060px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-       .yorum-panel h2 {
-    font-size: 24px; /* Daha büyük başlık boyutu */
-    color: #333; /* Daha belirgin bir renk */
-    margin-bottom: 20px; /* Biraz daha fazla boşluk */
-}
+            .yorum-panel h2 {
+                font-size: 24px; /* Daha büyük başlık boyutu */
+                color: #333; /* Daha belirgin bir renk */
+                margin-bottom: 20px; /* Biraz daha fazla boşluk */
+            }
 
 
             .yorum-panel hr {
@@ -205,12 +205,12 @@
             }
 
         .yorumlar {
-    margin-bottom: 30px; /* Daha fazla boşluk */
-}
+            margin-bottom: 30px; /* Daha fazla boşluk */
+        }
 
-.yorum-yap {
-    margin-top: 20px; /* Yorum yap bölümü ile yorumlar arasına biraz boşluk ekleyelim */
-}
+        .yorum-yap {
+            margin-top: 20px; /* Yorum yap bölümü ile yorumlar arasına biraz boşluk ekleyelim */
+        }
 
 
         .yorum {
@@ -285,7 +285,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Default.aspx">Ana Sayfa</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="Bloglar.aspx">Bloglar</a>
                         </li>
@@ -307,7 +307,12 @@
                         <asp:DataList ID="dl_slider" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+
+                                    <a href="makaledetay.aspx?blogID=<%#Eval("blogID") %>">
+
+                                        <img src="<%#Eval("blogResim") %>" alt="<%#Eval("blogBaslik") %>" title="<%#Eval("blogBaslik") %>" />
+                                    </a>
+
                                 </li>
                             </ItemTemplate>
                         </asp:DataList>
@@ -412,18 +417,29 @@
                     <div class="yorumlar">
                         <asp:DataList ID="DataList2" runat="server">
                             <ItemTemplate>
-                                <div>
-                                    <asp:Image ID="Image4" runat="server" Height="51px" ImageUrl='<%# Eval("yorumResim") %>' Width="77px" />
-                                </div>
-                                <div>
+                                <div style="display: flex">
 
-                                    <asp:Label ID="Label6" runat="server" Text='<%# Eval("yorumAdSoyad") %>'></asp:Label>
-                                    <asp:Label ID="Label7" runat="server" Text='<%# Eval("yorumTarih","{0:dd MMMM yyyy}") %>'></asp:Label>
+                                    <div style="margin: 20px; ">
+                                        <asp:Image ID="Image4" runat="server" Height="100px" ImageUrl='<%# Eval("yorumResim") %>' Width="100px" />
+                                    </div>
+
+                                    <div style="margin-top: 20px;">
+                                        <div style="font-weight:bold; font-size:18px">
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("yorumAdSoyad") %>'></asp:Label>
+                                        </div>
+
+                                        <div style="font-size:16px; margin-bottom:10px;">
+
+                                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("yorumIcerik") %>'></asp:Label>
+                                        </div>
+
+                                        <div style="color: gray; font-size: 12px">
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Eval("yorumTarih","{0:dd MMMM yyyy}") %>'></asp:Label>
+                                        </div>
+                                    </div>
 
                                 </div>
-                                <div>
-                                    <asp:Label ID="Label8" runat="server" Text='<%# Eval("yorumIcerik") %>'></asp:Label>
-                                </div>
+
                             </ItemTemplate>
                         </asp:DataList>
                     </div>
