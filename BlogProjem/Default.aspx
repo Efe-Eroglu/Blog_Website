@@ -18,7 +18,7 @@
                                                 Kelimelerin sihirli gücü, insanların kalplerine dokunmanın, hayalleri inşa etmenin ve dünyayı dönüştürmenin anahtarıdır. Her cümle, bir hikayenin başlangıcı; her paragraf, bir yolculuğun kapısıdır
                                             </p>
                                             <div class="btn-box">
-                                                <a href="/" class="btn-1">Okumaya Başla</a>
+                                                <a href="Bloglar.aspx" class="btn-1">Okumaya Başla</a>
                                             </div>
                                         </div>
                                     </div>

@@ -92,7 +92,12 @@ namespace BlogProjem.admin
             {
                 fu_slider.SaveAs(Server.MapPath("/sresim/" + fu_slider.FileName));
 
-                SqlCommand cmdmekle = new SqlCommand("insert into Blog(blogBaslik, blogOzet, blogIcerik, blogResim, kategoriID) values ('" + txt_baslik.Text + "','" + txt_ozet.Text + "','" + txt_icerik.Text + "','/sresim/" + fu_slider.FileName + "','" + ddl_kategori.SelectedValue + "')", baglan.baglan());
+                SqlCommand cmdmekle = new SqlCommand("insert into Blog(blogBaslik, blogOzet, blogIcerik, blogResim, kategoriID) values (@blogBaslik, @blogOzet, @blogIcerik, @blogResim, @kategoriID)", baglan.baglan());
+                cmdmekle.Parameters.AddWithValue("@blogBaslik", txt_baslik.Text);
+                cmdmekle.Parameters.AddWithValue("@blogOzet", txt_ozet.Text);
+                cmdmekle.Parameters.AddWithValue("@blogIcerik", txt_icerik.Text);
+                cmdmekle.Parameters.AddWithValue("@blogResim", "/sresim/" + fu_slider.FileName);
+                cmdmekle.Parameters.AddWithValue("@kategoriID", ddl_kategori.SelectedValue);
                 cmdmekle.ExecuteNonQuery();
 
                 SqlCommand cmdkadet = new SqlCommand("update Kategori Set kategoriAdet=kategoriAdet+1 where kategoriID='"+ddl_kategori.SelectedValue+"'",baglan.baglan());
